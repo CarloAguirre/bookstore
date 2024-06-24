@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    text-align: start;
+}
+.title-container{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.line {
+    width: 9px;
+    background-color: #eb1808;
+    margin-right: 1rem;
+}
+.principal-container {
+    display: grid;
+    grid-template-rows: .7fr 10fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "footer"
+    "main"
+    "nav";
+
+}
+nav {
+    grid-area: nav;
+    background-color:#28303b;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 700;
+    color: aliceblue;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: medium;
+    font-weight: 300;
+    text-align: start;
+}
+.nav-links a {
+    text-decoration: none;
+    color: aliceblue;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.btn-container button {
+    background-color: #a4291c;
+    padding: 1rem;
+    border: none;
+    color: white;
+}
+.input-group {
+    width: 30vw;
+    margin-top: .6rem;
+}
+main {
+    grid-area: main;
+    overflow-y: scroll;
+}
+
+.bg-img {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.libros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.libro:hover{
+    cursor: pointer;;
+}
+
+.libro{
+    width: 300px;
+    height: 500px;
+    font-size: xx-large;
+    font-weight: 900;
+    color: rgb(148, 0, 0);
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    transition: 2s ease-out;
+}
+.estrenos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: "Pacifico", cursive;
+}
+.libro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.libro-4 {
+    position: relative;
+}
+
+.triangle-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 100px solid #eb1808; 
+    border-left: 100px solid transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transform-origin: top right;
+  }
+  
+  .triangle-text::before { 
+    content: "ESTRENOS";
+    position: absolute;
+    color: aliceblue;
+    top: -100px; 
+    left: -65px;
+    transform: rotate(45deg); 
+    transform-origin: top left;
+  }
+header {
+    grid-area: footer;
+    background-color:#1c1d22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-control{
+    background-color: #696f77;
+    border: #696f77;
+}
+
+
+@media (min-width: 992px){
+   .principal-container {
+        grid-template-columns: 15rem 1fr;
+        grid-template-areas: 
+        "footer footer"
+        "nav main"
+        "nav main";
+   }
+   .libros {
+    flex-direction: row;
+    justify-content: center;
+   }
+   .estrenos {
+    flex-direction: row;
+    justify-content: center;
+   }
+   .libro {
+    height: 55vh;
+    width: 18vw;
+    min-width: 300px;
+   }
+   nav {
+    flex-direction: column;
+    padding-bottom: 5vh;
+   }
+   .nav-links {
+    gap: 30px;
+   }
+   .toggler {
+    display: none;
+   }
+}
+
+@media (max-width: 992px){
+   .nav-links {
+    display: none;
+   }
+   header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+   }
+   .input-group{
+    min-width: 15rem;
+   }
+}
+
+
